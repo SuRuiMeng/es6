@@ -30,3 +30,7 @@ let [...foo1] = [];
 console.log(foo1);
 let [bar1, foo2] = [1];
 console.log(foo2);
+//set结构
+let [x, y, z] = new Set(['a', 'b', 'c']);/**
+ * 还不太懂 重点标记
+ */
