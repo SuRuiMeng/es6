@@ -15,12 +15,26 @@ console.log("b:"+b);
     }
     //console.log("外面的："+i);//同样的未找到
 }
-
+//下面两个for循环的对比,var声明时整个for循环是一个作用域
 var a = [];
 for (var i = 0; i < 10; i++) {
   a[i] = function () {
     console.log(i);
   };
 }
-a[6](); // 10
+//每一个单独的循环就是一个作用域
+var a = [];
+for (let i = 0; i < 10; i++) {
+    console.log(i+"####");
+  a[i] = function () {
+    console.log(i);
+  };
+}
+a[6](); // 6
 
+
+//
+for(var i of a)
+{
+    console.log(i);
+}
