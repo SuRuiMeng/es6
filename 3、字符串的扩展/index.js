@@ -69,5 +69,17 @@ console.log("\u{abcd}\u{bcde}");//汉字的拓展方法
     //console.log('Su'.repeat(-1));//负数或者无穷大会报错
     //console.log('Su'.repeat(Infinity));
 }
-//九、
-
+//九、padStart()，padEnd() 头部补全 和尾部补全 具体例子如下
+{
+    console.log('aaa'.padStart(8,'abc'));//参数内容如下 第一个参数总共补全的位数 第二个参数作为补全的字符或字符串
+    console.log('aaa'.padStart(9,'abc'));
+    console.log('aaa'.padStart(2,'abc'));//如果补全的位数小于等于 初始字符串 则返回初始字符串
+}
+//十、模板字符串
+{
+    //es6之前
+    console.log('There are <b>' + basket.count + '</b> ' +
+    'items in your basket, ' +
+    '<em>' + basket.onSale +
+    '</em> are on sale!');
+}
