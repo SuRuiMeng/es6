@@ -78,8 +78,60 @@ console.log("\u{abcd}\u{bcde}");//汉字的拓展方法
 //十、模板字符串
 {
     //es6之前
-    console.log('There are <b>' + basket.count + '</b> ' +
+    console.log('There are <b>'  + '</b> ' +
     'items in your basket, ' +
-    '<em>' + basket.onSale +
+    '<em>'  +
     '</em> are on sale!');
+    //${basket.onSale}将+basket.onSale+改为这种方式
+    console.log(`string text line 1
+
+        string text line 2`);//按照现在的这种形式
+        //如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。
+    /**
+     * 重点：模板字符串中嵌入变量，需要将变量名写在${}之中
+     * 如果使用模板字符串表示多行字符串，所有的空格和缩进都会被保留在输出之中。
+     */
 }
+//十一、标签模板
+{
+    console.log`123`
+    // 等同于
+    console.log(123);
+    function a(args,s1,s2){
+        console.log(args[0]);
+        console.log(...args);
+        console.log(s1);
+        console.log(s2);
+    }
+
+    a`xix ${3} haha ${6} fuck`;
+
+
+    let total = 30;
+let msg = passthru`The total is ${total} (${total*1.05} with tax)`;
+
+function passthru(literals) {
+    console.log(literals);
+  let result = '';
+  let i = 0;
+
+  while (i < literals.length) {
+    result += literals[i++];
+    if (i < arguments.length) {
+      result += arguments[i];
+    }
+  }
+
+  return result;
+}
+
+console.log(msg);
+}
+
+//十二、String.raw
+{
+
+   let a= String.raw`xixi`;
+   console.log(a);
+}
+
