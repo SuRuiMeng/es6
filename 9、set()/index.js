@@ -30,3 +30,21 @@
   * 3、Map();
   * 
   */
+{
+  const m=new Map();
+  const [aArray,bArray,]=[[1,1,1,1,1],[2,2,2,2,2,2,],];
+  m.set('a',aArray);
+  m.set('b',bArray);
+  console.log(m.get('a'));//'abc'
+  console.log(m.get('b'));
+  console.log(m.has('a'));//true
+  console.log(m.delete('a'));//true
+  console.log(m.get('a'));//undefined
+  const map = new Map([
+    ['name', '张三'],
+    ['title', 'Author']
+  ]);
+  console.log(map.size);
+  console.log(map.has('name'));
+  console.log(map.get('name'));
+}
